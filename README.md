@@ -3,6 +3,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/ticker-live.gif" alt="the sign scrolling" width="100%">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/esp32-devkit-F7B2D9?style=for-the-badge&labelColor=5B4B6B" alt="esp32">
   <img src="https://img.shields.io/badge/arduino-c++-B5BEFF?style=for-the-badge&labelColor=5B4B6B" alt="arduino">
   <img src="https://img.shields.io/badge/leds-512-F7B2D9?style=for-the-badge&labelColor=5B4B6B" alt="512 leds">
