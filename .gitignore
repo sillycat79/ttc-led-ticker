@@ -1,0 +1,7 @@
+# keep my wifi password off the internet
+secrets.h
+
+# mac + arduino junk
+.DS_Store
+build/
+*.bin
