@@ -17,7 +17,7 @@
 
 i'm always checking the ttc app on my way out the door, so i'm making a little station sign for my wall instead 🎀
 
-it's an esp32 + two 8×32 led panels chained into one long 64 × 8 cm strip. every 30 seconds it asks the ttc's live feed when the next **509 to union station** is coming to my stop (fleet st at bathurst st), and scrolls it right → left in red, like the real signs:
+it's an esp32 + two 8×32 led panels chained into one long 64 × 8 cm strip. every 30 seconds it asks the ttc's live feed when the next **509 to union station** is coming to my stop, and scrolls it right → left in red, like the real signs:
 
 ```
 509 HARBOURFRONT > 3 & 10 MIN
@@ -29,26 +29,11 @@ this is my second wall build, the first one is my [github led wall](https://gith
   <img src="assets/ticker-preview.svg" alt="what the sign shows" width="90%">
 </p>
 
-## 🚋 my stop
+## 🚋 picking the stop
 
-| | |
-|---|---|
-| **stop** | fleet st at bathurst st |
-| **stop id** | `10210` |
-| **what it shows** | 509 harbourfront, eastbound → union station |
-| **feed** | ttc's public real-time feed (no api key!) |
+set your stop id at the top of `ttc_ticker.ino`. find it on google maps (it's right under the stop name) or on the pole at the stop. no api key needed, the ttc's real-time feed is public.
 
-the 511 bathurst stops here too, but only going north to bathurst station, so the sign hides it. change one line to show it (see [settings](#-settings)).
-
-to use your own stop: find it on google maps, the stop id is right under the name. or check the pole at the stop.
-
-## ♡ where it's going
-
-still deciding: by the front door so i see it while putting my shoes on, or right under my github wall above my desk. sketched both to scale:
-
-<p align="center">
-  <img src="assets/sketch-wall.svg" alt="placement options" width="90%">
-</p>
+by default it only shows trips headed to union station (`DIRECTION_MATCH = "Union"`), so routes going the other way get hidden. set it to `""` to show everything at the stop.
 
 ## 🛍️ hardware
 
@@ -105,8 +90,8 @@ all at the top of `ttc_ticker.ino`:
 
 | setting | default | what it does |
 |---|---|---|
-| `STOP_IDS` | `"10210"` | which stop(s) to check |
-| `DIRECTION_MATCH` | `"Union"` | only show trips headed there. `""` = everything at the stop (brings back the 511) |
+| `STOP_IDS` | `"YOUR_STOP_ID"` | which stop(s) to check |
+| `DIRECTION_MATCH` | `"Union"` | only show trips headed there. `""` = everything at the stop |
 | `ARRIVALS_PER_ROUTE` | `2` | `3 & 10 MIN` |
 | `SCROLL_MS` | `35` | lower = faster scrolling |
 | `BRIGHTNESS` | `40` | 0–255 |
