@@ -1,6 +1,6 @@
 // ttc led ticker ✿
 // live ttc arrivals scrolling right → left on two chained 8x32 WS2812B panels (64x8)
-// default stop: Fleet St at Bathurst St (stop 10210), only trips heading to Union Station (the 509 east)
+// shows only trips heading to Union Station by default (see DIRECTION_MATCH)
 //
 // board: "ESP32 Dev Module" (ELEGOO ESP32 / ESP32-WROOM-32)
 // libraries (Arduino Library Manager):
@@ -27,13 +27,12 @@
 
 // ================= settings ✿ =================
 
-// stop ids are on the stop pole / google maps ("Stop ID: 10210")
-const char* STOP_IDS[]   = { "10210" };     // add more, e.g. { "10210", "<west side stop>" }
+// stop ids are on the stop pole / google maps (under the stop name: "Stop ID: 12345")
+const char* STOP_IDS[]   = { "YOUR_STOP_ID" };  // add more, e.g. { "12345", "67890" }
 // routes in the order you want them shown. anything else at the stop goes after
 const char* ROUTE_ORDER[] = { "509", "511" };
-// only show trips whose direction mentions this. at stop 10210 the 509 says
-// "East - 509 Harbourfront towards Union Station". the 511 there only goes north
-// to Bathurst Station, so it gets hidden. set to "" to show everything at the stop
+// only show trips whose direction mentions this, e.g. the ttc labels them like
+// "East - 509 Harbourfront towards Union Station". set to "" to show everything at the stop
 const char* DIRECTION_MATCH = "Union";
 const bool  ONLY_LISTED_ROUTES = false;     // true = hide routes not in ROUTE_ORDER
 const int   ARRIVALS_PER_ROUTE = 2;         // "3 & 10 MIN"
