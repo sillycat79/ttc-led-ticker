@@ -28,7 +28,7 @@
 // ================= settings ✿ =================
 
 // stop ids are on the stop pole / google maps (under the stop name: "Stop ID: 12345")
-const char* STOP_IDS[]   = { "YOUR_STOP_ID" };  // add more, e.g. { "12345", "67890" }
+const char* STOP_IDS[]   = { "10210" };     // example stop id, swap in yours. add more like { "12345", "67890" }
 // routes in the order you want them shown. anything else at the stop goes after
 const char* ROUTE_ORDER[] = { "509", "511" };
 // only show trips whose direction mentions this, e.g. the ttc labels them like
